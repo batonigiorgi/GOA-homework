@@ -11,7 +11,7 @@ print(float(13 / 5))
 print(float(15 / 5))
 print(float(10 / 20))
 print(float(10 / 5))
-print(float("10" / 5))
+#print(float("10" / 5))
 
 
 #string funqciis gamoyeneba
