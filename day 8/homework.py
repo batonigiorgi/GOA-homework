@@ -26,9 +26,9 @@ if num1 == 0:
 #5
 
 age= int(input("Enter your age: "))
-if age > 18: 
+if age < 18: 
     print("You are virgin")
-if age < 18:
+if age > 18:
     print("You are adult")
 
 #6
