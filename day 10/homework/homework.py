@@ -32,10 +32,10 @@ for i in range(1):
         print("HIGHEST NUMBER")
 
 
-num2 = int(input("Enter number"))
+num2 = int(input("Enter number: "))
 for i in range(1):
     if 100 > num2:
-        print("Lowest number")
+        print("Lowest number ")
 
 #7
 
