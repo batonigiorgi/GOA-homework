@@ -18,7 +18,7 @@ print(sum)
 #3-------------------------------------
 
 num=0
-while num!=5:
+while num !=5:
     num = int(input("Please enter number: "))
     if num == 5:
         print("You won")
