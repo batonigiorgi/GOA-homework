@@ -1,0 +1,4 @@
+def sum_elements(list):
+    return sum(list)
+
+print(sum_elements([1,2,3,4,5]))
