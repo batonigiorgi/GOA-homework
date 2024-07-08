@@ -3,3 +3,6 @@ def calculate_average():
     print(sum(numbers) / len(numbers))
 
 calculate_average()
+
+
+

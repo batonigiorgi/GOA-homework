@@ -25,4 +25,4 @@ def calculate(a, b):
     return result
 
 
-print(calculate(10, 5))
+print(calculate(2, 4))

@@ -1,4 +1,4 @@
 def is_palindrome(s):
     return s == s[::-1]
 
-print(is_palindrome("afd"))
+print(is_palindrome("wow"))
