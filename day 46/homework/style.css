@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.parent {
+    width: 100%;
+    padding: 20px;
+}
+
+.child {
+    width: 30%;
+    float: left;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+}
+
+.child img {
+    width: 100%;
+}
+
+.child h2 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.child a {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+
