@@ -1,0 +1,36 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 20px;
+}
+
+.text {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    gap: 20px;
+    
+}
+
+.logo {
+    color: white;
+    font-size: large;
+}
+
+.button button{
+    background-color: #1db2a4;
+    border-radius: 20px;
+    font-size: medium;
+}
+
+
