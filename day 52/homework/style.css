@@ -1,0 +1,42 @@
+.card {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.div1, .div2, .div3, .div4, .div5 {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    transition: transform 0.5s ease;
+}
+.div1:hover {
+    transform: rotate(15deg);
+}
+.div1:active {
+    transform: scale(1.5);
+}
+.div2:hover {
+    transform: translate(20px, 20px);
+}
+.div2:active {
+    transform: skew(10deg, 5deg);
+}
+.div3:hover {
+    transform: scale(1.5);
+}
+.div3:active {
+    transform: rotate(-20deg);
+}
+.div4:hover {
+    transform: skew(15deg, 10deg);
+}
+.div4:active {
+    transform: translate(-30px, -30px);
+}
+.div5:hover {
+    transform: rotate(25deg);
+    transform-origin: bottom right;
+}
+.div5:active {
+    transform: scale(0.5) translate(10px, 10px);
+}
