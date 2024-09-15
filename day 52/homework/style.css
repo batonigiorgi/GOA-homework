@@ -22,7 +22,7 @@
     transform: skew(10deg, 5deg);
 }
 .div3:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 .div3:active {
     transform: rotate(-20deg);

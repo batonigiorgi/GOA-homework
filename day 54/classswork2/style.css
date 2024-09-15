@@ -1,0 +1,17 @@
+@keyframes slide {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    animation: slide 3s infinite;
+    animation-direction: alternate;
+}

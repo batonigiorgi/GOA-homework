@@ -1,0 +1,27 @@
+.transition-box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    margin: 50px;
+    transition: transform 1s ease-in-out 0.2s, background-color 0.5s linear;
+}
+
+.transition-box:hover {
+    transform: scale(1.5);
+    background-color: #e74c3c; 
+}
+
+.full-transition-box {
+    width: 100px;
+    height: 100px;
+    background-color: #2ecc71;
+    margin: 50px;
+    transition-property: transform, background-color;
+    transition-duration: 1s, 0.5s;
+    transition-timing-function: ease-in-out, linear;
+    transition-delay: 0.2s, 0s;
+}
+.full-transition-box:hover {
+    transform: rotate(45deg) scale(1.3);
+    background-color: #e74c3c;
+}

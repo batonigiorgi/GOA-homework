@@ -1,0 +1,11 @@
+.transition-box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    transition: transform 1s, background-color 0.5s; 
+}
+
+.transition-box:hover {
+    transform: scale(1.2);
+    background-color: #e74c3c; 
+}
