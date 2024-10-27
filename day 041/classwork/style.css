@@ -1,0 +1,48 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+header {
+    background: #000000;
+    color: #ff0000;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+p {
+    font-weight: normal;
+    font-size: 1.2em;
+}
+
+.portfolio {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ff0000;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(255, 0, 0, 0.1);
+}
+
+.project {
+    margin: 20px 0;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+h3 {
+    font-weight: semi-bold;
+    font-size: 1.5em;
+}
+
