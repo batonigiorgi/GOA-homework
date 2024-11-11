@@ -13,3 +13,7 @@ sum_result = add(pirveliDasamatebeli, meoreDasamatebeli)
 final_result = gamokleba(sum_result, gamoklebaa)
 
 print(final_result) 
+
+
+
+
