@@ -1,8 +1,0 @@
-#slideBox {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    position: relative;
-    left: -150px;
-    transition: left 0.5s ease;
-}
