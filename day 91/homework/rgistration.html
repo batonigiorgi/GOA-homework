@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input.valid {
+            background-color: #d4fcdc;
+        }
+        input.invalid {
+            background-color: #fcdada;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>რეგისტრაცია</h1>
+    <form id="validationForm" onsubmit="return validateForm()">
+        <label for="fullname">სრული სახელი:</label>
+        <input type="text" id="fullname"><br>
+        <div id="nameError" class="error"></div>
+
+        <label for="email">ელ. ფოსტა:</label>
+        <input type="text" id="email"><br>
+        <div id="emailError" class="error"></div>
+
+        <label for="password">პაროლი:</label>
+        <input type="password" id="password"><br>
+        <div id="passwordError" class="error"></div>
+
+        <label for="confirmPassword">პაროლის დადასტურება:</label>
+        <input type="password" id="confirmPassword"><br>
+        <div id="confirmPasswordError" class="error"></div>
+
+        <label for="age">ასაკი:</label>
+        <input type="number" id="age"><br>
+        <div id="ageError" class="error"></div>
+
+        <button type="submit">გაგზავნა</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            const fullname = document.getElementById("fullname");
+            const nameError = document.getElementById("nameError");
+            if (fullname.value.length < 3 || !/^[a-zA-Zა-ჰ ]+$/.test(fullname.value)) {
+                nameError.textContent = "უნდა შეიცავდეს მხოლოდ ასოებს და მინიმუმ 3 სიმბოლოს.";
+                fullname.classList.add("invalid");
+                fullname.classList.remove("valid");
+                isValid = false;
+            } else {
+                nameError.textContent = "";
+                fullname.classList.add("valid");
+                fullname.classList.remove("invalid");
+            }
+
+            const email = document.getElementById("email");
+            const emailError = document.getElementById("emailError");
+            if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email.value)) {
+                emailError.textContent = "შეცდომა emailში";
+                email.classList.add("invalid");
+                email.classList.remove("valid");
+                isValid = false;
+            } else {
+                emailError.textContent = "";
+                email.classList.add("valid");
+                email.classList.remove("invalid");
+            }
+
+            const password = document.getElementById("password");
+            const passwordError = document.getElementById("passwordError");
+            if (password.value.length < 8) {
+                passwordError.textContent = "პაროლი მინიმუმ 8 სიმბოლოს.";
+                password.classList.add("invalid");
+                password.classList.remove("valid");
+                isValid = false;
+            } else {
+                passwordError.textContent = "";
+                password.classList.add("valid");
+                password.classList.remove("invalid");
+            }
+
+            const confirmPassword = document.getElementById("confirmPassword");
+            const confirmPasswordError = document.getElementById("confirmPasswordError");
+            if (password.value !== confirmPassword.value) {
+                confirmPasswordError.textContent = "პაროლები არ ემთხვევა.";
+                confirmPassword.classList.add("invalid");
+                confirmPassword.classList.remove("valid");
+                isValid = false;
+            } else {
+                confirmPasswordError.textContent = "";
+                confirmPassword.classList.add("valid");
+                confirmPassword.classList.remove("invalid");
+            }
+
+            const age = document.getElementById("age");
+            const ageError = document.getElementById("ageError");
+            if (age.value < 18) {
+                ageError.textContent = "18+";
+                age.classList.add("invalid");
+                age.classList.remove("valid");
+                isValid = false;
+            } else {
+                ageError.textContent = "";
+                age.classList.add("valid");
+                age.classList.remove("invalid");
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>

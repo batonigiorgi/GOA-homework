@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .counter-container {
+      margin-top: 100px;
+    }
+    #counter {
+      font-size: 48px;
+      font-weight: bold;
+      margin: 20px auto;
+      padding: 20px;
+      width: 150px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      text-align: center;
+    }
+    input {
+      margin: 20px auto;
+      padding: 10px;
+      font-size: 18px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+    button {
+      font-size: 18px;
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #increaseBtn {
+      background-color: #4caf50;
+      color: white;
+    }
+    #decreaseBtn {
+      background-color: #f44336;
+      color: white;
+    }
+    #resetBtn {
+      background-color: #007bff;
+      color: white;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="counter-container">
+    <h1>Counter</h1>
+    <div id="counter">0</div>
+    <input type="number" id="inputValue"  />
+    <div>
+      <button id="increaseBtn">მომატება</button>
+      <button id="decreaseBtn">გამოკლება</button>
+      <button id="resetBtn">რესეტი</button>
+    </div>
+  </div>
+  <script>
+    let counterValue = 0;
+    let resetCount = 0;
+
+    const counterDisplay = document.getElementById('counter');
+    const inputValue = document.getElementById('inputValue');
+    const increaseBtn = document.getElementById('increaseBtn');
+    const decreaseBtn = document.getElementById('decreaseBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    function updateCounter() {
+        counterDisplay.textContent = counterValue;
+    }
+
+    function alertLimit() {
+        if (counterValue <= 0 && resetCount > 0) {
+            alert("უკვე ნოლზეა ვეღარ დარესტარტდება");
+        } else if (counterValue >= 100) {
+            alert("100ზე მეტი არშეილება");
+        } 
+    }
+
+    increaseBtn.addEventListener('click', () => {
+        const value = +inputValue.value; 
+        if (value > 0 && counterValue + value <= 100) {
+            counterValue += value;
+            updateCounter();
+        } else {
+            alert("100ზე მეტს ვერ დაამატებ");
+        }
+    });
+
+    decreaseBtn.addEventListener('click', () => {
+        const value = +inputValue.value; 
+        if (value > 0 && counterValue - value >= -100) {
+            counterValue -= value;
+            updateCounter();
+        } else {
+            alert("100ზე მეტის გამოკლება არ შეილება");
+        }
+    });
+
+    resetBtn.addEventListener('click', () => {
+        if (resetCount > 0 && counterValue === 0) {
+            alert("ნოლზეა უკვე ვეღარ აარესტარტებ");
+        } else {
+            counterValue = 0;
+            resetCount++;
+            updateCounter();
+        }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+body {
+    text-align: center;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  } 
+  #counter {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px auto;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+  }
+  
+  .neutral {
+    color: #000000;
+  }
+  
+  .positive {
+    color: green;
+  }
+  
+  .negative {
+    color: red;
+  }
+  
+  .buttons button {
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  #plus {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  #minus {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  #reset {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+  }
+  

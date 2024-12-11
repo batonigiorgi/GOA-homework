@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .counter-container {
+      margin: 20px 0;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .counter {
+      font-size: 24px;
+      margin: 10px;
+    }
+    button, input[type="number"] {
+      font-size: 16px;
+      margin: 5px;
+    }
+    .locked {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Counter Create</h1>
+  <button id="addCounterBtn">Add Counter</button>
+  <div id="countersContainer"></div>
+
+  <script>
+    let counterId = 0;
+
+    document.getElementById("addCounterBtn").addEventListener("click", () => {
+      if (counterId >= 3) {
+        alert("You can only create up to 3 counters.");
+        return;
+      }
+      createCounter();
+    });
+
+    function createCounter() {
+      counterId++;
+
+      const container = document.createElement("div");
+      container.className = "counter-container";
+      container.id = `counter-${counterId}`;
+
+      const counterDisplay = document.createElement("div");
+      counterDisplay.className = "counter";
+      counterDisplay.textContent = "0";
+      container.appendChild(counterDisplay);
+
+      const stepInput = document.createElement("input");
+      stepInput.type = "number";
+      stepInput.placeholder = "Step value";
+      container.appendChild(stepInput);
+
+      const increaseBtn = document.createElement("button");
+      increaseBtn.textContent = "Increase";
+      container.appendChild(increaseBtn);
+
+      const decreaseBtn = document.createElement("button");
+      decreaseBtn.textContent = "Decrease";
+      container.appendChild(decreaseBtn);
+
+      const lockCheckbox = document.createElement("input");
+      lockCheckbox.type = "checkbox";
+      lockCheckbox.id = `lock-${counterId}`;
+      const lockLabel = document.createElement("label");
+      lockLabel.htmlFor = lockCheckbox.id;
+      lockLabel.textContent = " Lock";
+      container.appendChild(lockCheckbox);
+      container.appendChild(lockLabel);
+
+      const undoBtn = document.createElement("button");
+      undoBtn.textContent = "Undo";
+      container.appendChild(undoBtn);
+
+      const redoBtn = document.createElement("button");
+      redoBtn.textContent = "Redo";
+      container.appendChild(redoBtn);
+
+      document.getElementById("countersContainer").appendChild(container);
+
+      let counterValue = 0;
+      let lastValue = 0;
+
+      function updateCounter(newValue) {
+        if (!lockCheckbox.checked) {
+          lastValue = counterValue;
+          counterValue = newValue;
+          counterDisplay.textContent = counterValue;
+        } else {
+          alert("ჩაკეტილის");
+        }
+      }
+
+      increaseBtn.addEventListener("click", () => {
+        const step = +stepInput.value || 1;
+        updateCounter(counterValue + step);
+      });
+
+      decreaseBtn.addEventListener("click", () => {
+        const step = +stepInput.value || 1;
+        updateCounter(counterValue - step);
+      });
+
+      undoBtn.addEventListener("click", () => {
+        if (!lockCheckbox.checked) {
+          const temp = counterValue;
+          counterValue = lastValue;
+          lastValue = temp;
+          counterDisplay.textContent = counterValue;
+        } else {
+          alert("ჩაკეტილია");
+        }
+      });
+
+      redoBtn.addEventListener("click", () => {
+        if (!lockCheckbox.checked) {
+          const temp = lastValue;
+          lastValue = counterValue;
+          counterValue = temp;
+          counterDisplay.textContent = counterValue;
+        } else {
+          alert("ჩაკეთილია");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

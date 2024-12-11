@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .password-input {
+      padding: 10px;
+      font-size: 16px;
+      width: 300px;
+    }
+    .strength-indicator {
+      margin-top: 10px;
+      padding: 10px;
+      font-weight: bold;
+    }
+    .low {
+      background-color: red;
+      color: white;
+    }
+    .medium {
+      background-color: yellow;
+      color: black;
+    }
+    .strong {
+      background-color: green;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Password</h1>
+  <input
+    type="password"
+    id="password"
+    class="password-input"
+    placeholder="Enter your password"
+    oninput="checkPasswordStrength()"
+  />
+  <div id="strength-indicator" class="strength-indicator"></div>
+
+  <script>
+    function checkPasswordStrength() {
+      const password = document.getElementById("password").value;
+      const strengthIndicator = document.getElementById("strength-indicator");
+
+      const lowStrength = /^.{6,}$/;
+      const mediumStrength = /^(?=.*[A-Z]|.*\d).{8,}$/;
+      const strongStrength = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%]).{10,}$/;
+
+      if (strongStrength.test(password)) {
+        strengthIndicator.textContent = "ძლიერი";
+        strengthIndicator.className = "strength-indicator strong";
+      } else if (mediumStrength.test(password)) {
+        strengthIndicator.textContent = "საშუალო";
+        strengthIndicator.className = "strength-indicator medium";
+      } else if (lowStrength.test(password)) {
+        strengthIndicator.textContent = "სუსტი";
+        strengthIndicator.className = "strength-indicator low";
+      } else {
+        strengthIndicator.textContent = "";
+        strengthIndicator.className = "strength-indicator";
+      }
+    }
+  </script>
+</body>
+</html>

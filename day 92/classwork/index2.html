@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .container {
+      margin-bottom: 10px;
+    }
+
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* Initially, the error message will be hidden */
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <label for="inputText">ჩაწერეთ ასოები</label>
+    <input type="text" id="inputText" oninput="validateInput()" placeholder="ჩაწერეთ მხოლოდ ასოები">
+  </div>
+
+  <div>
+    <p class="error hidden" id="errorMessage">შეცდომა</p>
+  </div>
+
+  <script>
+    function validateInput() {
+      var input = document.getElementById('inputText').value; 
+      var errorMessage = document.getElementById('errorMessage'); 
+
+      if (/[^a-zA-Z]/.test(input)) {
+        errorMessage.classList.remove('hidden'); 
+      } else {
+        errorMessage.classList.add('hidden'); 
+      }
+    }
+  </script>
+
+</body>
+</html>
