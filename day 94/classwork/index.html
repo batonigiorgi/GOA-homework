@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(270deg, #ff0008, #00ff3c, #0800ff, #ffe100);
+            background-size: 800% 800%;
+            animation: colorChange 10s infinite;
+        }
+
+        @keyframes colorChange {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background: linear-gradient(270deg, #ff0008, #00ff3c, #0800ff, #ffe100);
+            background-size: 800% 800%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            animation: none;
+        }
+
+        button:hover {
+            animation: colorChange 10s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>LASHA LOMIDZES MOSW</h1>
+    <button>GIORGI MINDORASHVILI</button>
+</body>
+</html>
