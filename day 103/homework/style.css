@@ -1,0 +1,104 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #000000, #ff0000);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .game-container {
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #444;
+    font-weight: 600;
+  }
+  
+  .choices {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+  .choice-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background: #ff0000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .choice-btn:hover {
+    background: #000000;
+  }
+  
+  .result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .history-tab {
+    margin-top: 30px;
+  }
+  
+  .toggle-tab-btn {
+    background: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .toggle-tab-btn:hover {
+    background: #000000;
+  }
+  
+  .history-content {
+    margin-top: 10px;
+    display: none;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .history-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .history-content li {
+    margin: 5px 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .history-content .win {
+    background: #00ff3c;
+    color: #000000;
+  }
+  
+  .history-content .lose {
+    background: #ff0015;
+    color: #000000;
+  }
+  
