@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: white;
+        }
+
+        .box {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .red {
+            background-color: red;
+            top: 0;
+            left: 0;
+        }
+
+        .green {
+            background-color: green;
+            top: 0;
+            right: 0;
+        }
+
+        .blue {
+            background-color: blue;
+            bottom: 0;
+            left: 0;
+        }
+
+        .purple {
+            background-color: purple;
+            bottom: 0;
+            right: 0;
+        }
+
+        .footer {
+            background-color: gray;
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+        <div class="box purple"></div>
+        <div class="box footer"></div>
+    </div>
+</body>
+</html>
