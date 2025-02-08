@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .calculator {
+            display: inline-block;
+            padding: 20px;
+            border: 2px solid #000;
+            background: #ffffff;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Simple Calculator</h2>
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <br>
+        <button onclick="calculate('plus')">+</button>
+        <button onclick="calculate('minus')">-</button>
+        <button onclick="calculate('multiply')">×</button>
+        <button onclick="calculate('divide')">÷</button>
+        <h3>Result: <span id="result">0</span></h3>
+    </div>
+
+    <script>
+        class Calculator {
+            static plus(a, b) {
+                return a + b;
+            }
+
+            static minus(a, b) {
+                return a - b;
+            }
+
+            static multiply(a, b) {
+                return a * b;
+            }
+
+            static divide(a, b) {
+                return b === 0 ? "cant divide zero" : a / b;
+            }
+        }
+
+        function calculate(operation) {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').innerText = "Enter  numbers";
+                return;
+            }
+
+            let result = Calculator[operation](num1, num2);
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>
