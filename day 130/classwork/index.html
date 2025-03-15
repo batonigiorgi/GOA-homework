@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dog photos</h1>
+    <button onclick="dogimage()">new photo</button>
+    <br>
+    <img id="dogimage"></img>
+    <script>
+        async function dogimage() {
+            try {
+                let resp = await fetch('https://dog.ceo/api/breeds/image/random');
+                if (!resp.ok) {
+                    throw new Error("this is error");
+                }
+                let data = await resp.json();
+                document.getElementById('dogimage').src = data.message;
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>
