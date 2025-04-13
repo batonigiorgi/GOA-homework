@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dessert Shop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-50 font-sans">
+  <header class="bg-pink-500 text-white text-center py-6 text-3xl font-bold">
+    Dessert Delights
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="text-2xl font-semibold mb-6 text-pink-700">Our Desserts</h2>
+    <div id="dessert-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Dessert cards will be inserted here -->
+    </div>
+
+    <div class="mt-10 p-6 bg-white rounded shadow-lg border-t-4 border-pink-400">
+      <h3 class="text-xl font-semibold mb-4 text-pink-600">Your Cart</h3>
+      <ul id="cart-items" class="mb-4 text-gray-700"></ul>
+      <p class="text-lg font-bold">Total: $<span id="total">0.00</span></p>
+    </div>
+  </main>
+
+  <script>
+    const desserts = [
+      { name: "Chocolate Cake", price: 4.99 },
+      { name: "Strawberry Cheesecake", price: 5.49 },
+      { name: "Vanilla Ice Cream", price: 3.99 },
+      { name: "Fruit Tart", price: 4.29 },
+      { name: "Macarons", price: 6.00 },
+      { name: "Lemon Pie", price: 4.75 }
+    ];
+
+    const dessertList = document.getElementById("dessert-list");
+    const cartItems = document.getElementById("cart-items");
+    const totalEl = document.getElementById("total");
+    let total = 0;
+
+    desserts.forEach((dessert, index) => {
+      const card = document.createElement("div");
+      card.className = "bg-white p-4 rounded shadow hover:shadow-lg transition duration-300";
+      card.innerHTML = `
+        <h4 class="text-xl font-bold text-pink-600">${dessert.name}</h4>
+        <p class="text-gray-700 mb-2">$${dessert.price.toFixed(2)}</p>
+        <button class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600" onclick="addToCart(${index})">Add to Cart</button>
+      `;
+      dessertList.appendChild(card);
+    });
+
+    function addToCart(index) {
+      const item = desserts[index];
+      const li = document.createElement("li");
+      li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+      cartItems.appendChild(li);
+      total += item.price;
+      totalEl.textContent = total.toFixed(2);
+    }
+  </script>
+</body>
+</html>
