@@ -1,0 +1,27 @@
+import React from 'react';
+
+function App() {
+  const numbers = [...Array(100).keys()]; 
+
+  return (
+    <div>
+      {numbers.map(i => (
+        <div key={i}>box</div>
+      ))}
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+const divs = [];
+let i = 0;
+do {
+  divs.push(<div key={i}>box</div>);
+  i++;
+} while (i < 100);
+return <div>{divs}</div>;
