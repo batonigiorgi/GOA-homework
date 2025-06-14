@@ -1,0 +1,36 @@
+def is_pangram(st):
+    alphabet = "abcdefghijklmnopqrstuvwsyz"
+    st = st.lower()
+    for letter in alphabet:
+        if letter not in st:
+            return False 
+    return True
+
+
+
+
+def cannons_ready(gunners):
+    for answer in gunners.values():
+        if answer != "aye":
+            return "Shiver me timbers!" 
+    return "Fire!"  
+
+
+
+def animals(heads, legs):
+    if heads < 0 or legs < 0:
+        return "No solutions"
+    
+    cows = (legs - 2 * heads) / 2
+    chickens = heads - cows
+
+    if cows != int(cows) or chickens != int(chickens):
+        return "No solutions"
+    
+    cows = int(cows)
+    chickens = int(chickens)
+
+    if cows < 0 or chickens < 0:
+        return "No solutions"
+
+    return (chickens, cows)

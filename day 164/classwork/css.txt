@@ -1,0 +1,12 @@
+<style>
+  i {
+    color: #282828;
+    margin: 10px 340px 170px 60px;
+    border-radius: 1in;
+    box-shadow:
+      423px 0 0 169px #fff,
+      423px 169px #fff,
+      212px 85px 0 -21px rgba(255, 182, 66, 1),
+      0 0 0 4in #FB5220;
+  }
+</style>
